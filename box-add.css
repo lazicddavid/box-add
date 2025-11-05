@@ -16,6 +16,10 @@ body {
   cursor: pointer;
 }
 
-.paragraph {
+.paragraph1 {
   margin: 10px auto;
+}
+
+.paragraph2 {
+  margin-top: 0;
 }
