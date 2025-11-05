@@ -5,9 +5,17 @@
   align-items: center;
 }
 
+body {
+  margin: 0 auto;
+}
+
 .new-box-btn {
   padding: 10px 20px;
   border-radius: 6px;
-  border: 0.5px solid rgb(190, 179, 245);
+  border: 0.5px solid rgb(21, 21, 21);
   cursor: pointer;
+}
+
+.paragraph {
+  margin: 10px auto;
 }
