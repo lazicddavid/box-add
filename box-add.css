@@ -1,12 +1,12 @@
+body {
+  margin: 0 auto;
+}
+
 .container {
   display: flex;
   gap: 10px;
   flex-direction: column;
   align-items: center;
-}
-
-body {
-  margin: 0 auto;
 }
 
 .new-box-btn {
