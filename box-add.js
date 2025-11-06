@@ -1,6 +1,7 @@
 const DOMElements = {
   boxesContainer: document.querySelector(".boxes"),
   addNewBoxButton: document.querySelector(".new-box-btn"),
+  boxesCountSpan: document.querySelector(".paragraph1 span"),
 };
 
 const boxList = {
