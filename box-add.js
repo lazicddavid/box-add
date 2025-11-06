@@ -30,6 +30,8 @@ function updateBoxes() {
       <button class="delete-btn">🗑️</button>
     `;
     DOMElements.boxesContainer.appendChild(boxElement);
+
+    DOMElements.boxesCountSpan.textContent = boxList.boxes.length;
   });
 }
 
