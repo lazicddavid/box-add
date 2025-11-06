@@ -1,7 +1,7 @@
 // 1) DOM elementi
-const DOM = {
-  container: document.querySelector(".container"),
-  addBtn: document.querySelector(".new-box-btn"),
+const DOMElements = {
+  boxesContainer: document.querySelector(".boxes"),
+  addNewBoxButton: document.querySelector(".new-box-btn"),
 };
 
 // 2) State
@@ -19,25 +19,25 @@ function createBox() {
   return { id: crypto.randomUUID() };
 }
 
-// 4) render
+// 4) updateBoxes
 function updateBoxes() {
-  document.querySelectorAll(".box").forEach((b) => b.remove());
+  DOMElements.boxesContainer.innerHTML = "";
 
-  boxList.boxes.forEach(() => {
-    const box = document.createElement("div");
-    box.className = "box";
-    box.innerHTML = `
+  boxList.boxes.forEach((boxObject) => {
+    const boxElement = document.createElement("div");
+    boxElement.className = "box";
+    boxElement.innerHTML = `
       <button>-</button>
       <span>0</span>
       <button>+</button>
       <button class="delete-btn">🗑️</button>
     `;
-    DOM.container.appendChild(box);
+    DOMElements.boxesContainer.appendChild(boxElement);
   });
 }
 
-// 5) Event – dodavanje novog boxa
-DOM.addBtn.addEventListener("click", () => {
+// 5) Klik na dugme
+DOMElements.addNewBoxButton.addEventListener("click", () => {
   boxList.add();
-  render();
+  updateBoxes();
 });
