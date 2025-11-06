@@ -1,10 +1,8 @@
-// 1) DOM elementi
 const DOMElements = {
   boxesContainer: document.querySelector(".boxes"),
   addNewBoxButton: document.querySelector(".new-box-btn"),
 };
 
-// 2) State
 const boxList = {
   boxes: [],
 
@@ -14,16 +12,14 @@ const boxList = {
   },
 };
 
-// 3) createBox
 function createBox() {
   return { id: crypto.randomUUID() };
 }
 
-// 4) updateBoxes
 function updateBoxes() {
   DOMElements.boxesContainer.innerHTML = "";
 
-  boxList.boxes.forEach((boxObject) => {
+  boxList.boxes.forEach((box) => {
     const boxElement = document.createElement("div");
     boxElement.className = "box";
     boxElement.innerHTML = `
@@ -36,7 +32,6 @@ function updateBoxes() {
   });
 }
 
-// 5) Klik na dugme
 DOMElements.addNewBoxButton.addEventListener("click", () => {
   boxList.add();
   updateBoxes();
