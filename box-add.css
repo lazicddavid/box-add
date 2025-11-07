@@ -25,14 +25,8 @@ body {
   margin-top: 0;
 }
 
-.box {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  padding: 8px;
-  border: 1px solid black;
-  border-radius: 8px;
-  margin: 8px 6px;
+.paragraph2 {
+  margin-top: 0;
 }
 
 .box {
