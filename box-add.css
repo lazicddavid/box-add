@@ -36,4 +36,5 @@ body {
 }
 .container {
   padding: 20px;
+  margin: 0 auto;
 }
