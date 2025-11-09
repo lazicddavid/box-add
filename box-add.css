@@ -34,12 +34,13 @@ body {
   border-radius: 8px;
   margin: 8px 6px;
 }
-.container {
-  padding: 20px;
-  margin: 0 auto;
-}
 
-.container {
-  padding: 20px;
-  margin: 0 auto;
+.box {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 8px 6px;
 }
