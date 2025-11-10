@@ -30,7 +30,10 @@ body {
   gap: 8px;
   align-items: center;
   padding: 8px;
-  border: 1px solid black;
+
   border-radius: 8px;
   margin: 8px 6px;
+}
+
+.boxes {
 }
