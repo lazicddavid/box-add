@@ -38,7 +38,7 @@ function updateBoxes() {
     boxElement.className = "box";
     boxElement.innerHTML = ` 
       <button>-</button>
-      <span>0</span>
+      <button>0</button>
       <button>+</button>
       <button class="delete-btn">🗑️</button>
     `;
