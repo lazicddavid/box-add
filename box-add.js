@@ -5,7 +5,18 @@ const DOMElements = {
 };
 //napravi funkciju createBoxList
 //metode za davanje kutija na koriscenje
-const boxList = {
+
+function createBoxList() {
+  return {
+    boxes: [],
+    add() {
+      const newBox = createBox();
+      this.boxes.push(newBox);
+    },
+  };
+}
+const boxList = createBoxList();
+/*const boxList = {
   boxes: [],
 
   add() {
@@ -14,7 +25,7 @@ const boxList = {
     this.boxes.push(newBox);
   },
 };
-
+*/
 function createBox() {
   return { id: crypto.randomUUID(), marbles: 0 };
 }
@@ -25,7 +36,7 @@ function updateBoxes() {
   boxList.boxes.forEach((box) => {
     const boxElement = document.createElement("div");
     boxElement.className = "box";
-    boxElement.innerHTML = `
+    boxElement.innerHTML = ` 
       <button>-</button>
       <span>0</span>
       <button>+</button>
