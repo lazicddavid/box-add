@@ -26,6 +26,7 @@ const boxList = createBoxList();
   },
 };
 */
+const boxList = createBoxList();
 function createBox() {
   return { id: crypto.randomUUID(), marbles: 0 };
 }
