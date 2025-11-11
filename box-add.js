@@ -42,7 +42,7 @@ function updateBoxes() {
       <button data-action="decrease" data-id="${box.id}">-</button>
       <button>${box.marbles}</button>
       <button data-actio="increase" data-id="${box.id}">+</button>
-      <button class="delete-btn">🗑️</button>
+      <button class="delete-btn" data-action="delete" data-id="${box.id}">🗑️</button>
     `;
     DOMElements.boxesContainer.appendChild(boxElement);
   });
@@ -52,4 +52,10 @@ function updateBoxes() {
 DOMElements.addNewBoxButton.addEventListener("click", () => {
   boxList.add();
   updateBoxes();
+});
+
+DOMElements.boxesContainer.addEventListener("click", (e) => {
+  const id = e.target.dataset.id;
+  const action = e.target.dataset.id;
+  if (!id || !action) return;
 });
