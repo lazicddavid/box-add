@@ -17,7 +17,7 @@ function createBoxList() {
 
     increase(id) {
       const box = this.boxes.find((box) => box.id === id);
-      if (box && box.marbles > 0) box.marbles++;
+      if (box) box.marbles++;
     },
 
     decrease(id) {
@@ -39,9 +39,9 @@ function updateBoxes() {
     const boxElement = document.createElement("div");
     boxElement.className = "box";
     boxElement.innerHTML = ` 
-      <button>-</button>
-      <button>0</button>
-      <button>+</button>
+      <button data-action="decrease" data-id="${box.id}">-</button>
+      <button>${box.marbles}</button>
+      <button data-actio="increase" data-id="${box.id}">+</button>
       <button class="delete-btn">🗑️</button>
     `;
     DOMElements.boxesContainer.appendChild(boxElement);
