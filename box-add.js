@@ -3,8 +3,6 @@ const DOMElements = {
   addNewBoxButton: document.querySelector(".new-box-btn"),
   boxesCountSpan: document.querySelector(".paragraph1 span"),
 };
-//napravi funkciju createBoxList
-//metode za davanje kutija na koriscenje
 
 function createBoxList() {
   return {
@@ -13,19 +11,22 @@ function createBoxList() {
       const newBox = createBox();
       this.boxes.push(newBox);
     },
+    getBoxes() {
+      return this.boxes;
+    },
+
+    increase(id) {
+      const box = this.boxes.find((box) => box.id === id);
+      if (box && box.marbles > 0) box.marbles++;
+    },
+
+    decrease(id) {
+      const box = this.boxes.find((box) => box.id === id);
+      if (box && box.marbles > 0) box.marbles--;
+    },
   };
 }
-const boxList = createBoxList();
-/*const boxList = {
-  boxes: [],
 
-  add() {
-    //pomeri ovu kreiranje kutija dole
-    const newBox = createBox();
-    this.boxes.push(newBox);
-  },
-};
-*/
 const boxList = createBoxList();
 function createBox() {
   return { id: crypto.randomUUID(), marbles: 0 };
@@ -34,7 +35,7 @@ function createBox() {
 function updateBoxes() {
   DOMElements.boxesContainer.innerHTML = "";
 
-  boxList.boxes.forEach((box) => {
+  boxList.getBoxes().forEach((box) => {
     const boxElement = document.createElement("div");
     boxElement.className = "box";
     boxElement.innerHTML = ` 
