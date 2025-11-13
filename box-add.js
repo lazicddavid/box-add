@@ -2,6 +2,7 @@ const DOMElements = {
   boxesContainer: document.querySelector(".boxes"),
   addNewBoxButton: document.querySelector(".new-box-btn"),
   boxesCountSpan: document.querySelector(".paragraph1 span"),
+  marblesboxesCountSpan: document.querySelector(".paragraph2 span"),
 };
 
 function createBoxList() {
