@@ -52,6 +52,8 @@ function updateBoxes() {
   DOMElements.boxesCountSpan.textContent = boxList.boxes.length;
 
   DOMElements.boxesContainer.textContent = boxList.marbles.length;
+
+  DOMElements.marblesCountSpan.textContent = totalMarbles;
 }
 
 DOMElements.addNewBoxButton.addEventListener("click", () => {
