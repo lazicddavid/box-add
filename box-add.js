@@ -2,7 +2,7 @@ const DOMElements = {
   boxesContainer: document.querySelector(".boxes"),
   addNewBoxButton: document.querySelector(".new-box-btn"),
   boxesCountSpan: document.querySelector(".paragraph1 span"),
-  marblesboxesCountSpan: document.querySelector(".paragraph2 span"),
+  marblesCountSpan: document.querySelector(".paragraph2 span"),
 };
 
 function createBoxList() {
@@ -39,6 +39,7 @@ function updateBoxes() {
   DOMElements.boxesContainer.innerHTML = "";
   let totalMarbles = 0;
   boxList.getBoxes().forEach((box) => {
+    totalMarbles += box.marbles;
     const boxElement = document.createElement("div");
     boxElement.className = "box";
     boxElement.innerHTML = ` 
@@ -50,8 +51,6 @@ function updateBoxes() {
     DOMElements.boxesContainer.appendChild(boxElement);
   });
   DOMElements.boxesCountSpan.textContent = boxList.boxes.length;
-
-  DOMElements.boxesContainer.textContent = boxList.marbles.length;
 
   DOMElements.marblesCountSpan.textContent = totalMarbles;
 }
