@@ -37,7 +37,7 @@ function createBox() {
 
 function updateBoxes() {
   DOMElements.boxesContainer.innerHTML = "";
-
+  let totalMarbles = 0;
   boxList.getBoxes().forEach((box) => {
     const boxElement = document.createElement("div");
     boxElement.className = "box";
