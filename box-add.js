@@ -8,6 +8,10 @@ const DOMElements = {
 function createBoxList() {
   return {
     boxes: [],
+    //dodaj total marbles
+    //na pocetak je 0
+    //napravi funkciju gettotaMarbles ili CalculateTotalMarbles
+    //tu funkciju pozoves kad god ti treba total marbles
     add() {
       const newBox = createBox();
       this.boxes.push(newBox);
@@ -34,12 +38,12 @@ const boxList = createBoxList();
 function createBox() {
   return { id: crypto.randomUUID(), marbles: 0 };
 }
-
+//prebaciti increase i decrease unutar createBox
 function updateBoxes() {
   DOMElements.boxesContainer.innerHTML = "";
   let totalMarbles = 0;
   boxList.getBoxes().forEach((box) => {
-    totalMarbles += box.marbles;
+    totalMarbles += box.marbles; //get funkcija za marbles
     const boxElement = document.createElement("div");
     boxElement.className = "box";
     boxElement.innerHTML = ` 
@@ -49,7 +53,8 @@ function updateBoxes() {
       <button class="delete-btn" data-action="delete" data-id="${box.id}">🗑️</button>
     `;
     DOMElements.boxesContainer.appendChild(boxElement);
-  });
+  }); //za svaku varijablu, bilo da je u box list, ili createBox, uvek napravi
+  // //funkcije koje se koriste za pristup varijablama
   DOMElements.boxesCountSpan.textContent = boxList.boxes.length;
 
   DOMElements.marblesCountSpan.textContent = totalMarbles;
