@@ -2,10 +2,6 @@ body {
   margin: 0 auto;
 }
 
-body {
-  margin: 0 auto;
-}
-
 .container {
   padding: 30px 0;
   display: flex;
@@ -27,6 +23,16 @@ body {
 
 .paragraph2 {
   margin-top: 0;
+}
+
+.box {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+
+  border-radius: 8px;
+  margin: 8px 6px;
 }
 
 .box {
