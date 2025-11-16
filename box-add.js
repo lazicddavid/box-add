@@ -38,6 +38,16 @@ const boxList = createBoxList();
 function createBox() {
   return { id: crypto.randomUUID(), marbles: 0 };
 }
+
+function getTotalMarbles() {
+  let total = 0;
+
+  boxList.getBoxes().forEach((box) => {
+    total += box.marbles;
+  });
+
+  return total;
+}
 //prebaciti increase i decrease unutar createBox
 function updateBoxes() {
   DOMElements.boxesContainer.innerHTML = "";
