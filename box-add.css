@@ -17,6 +17,12 @@ body {
   cursor: pointer;
 }
 
+.new-box-btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 0.5px solid rgb(21, 21, 21);
+  cursor: pointer;
+}
 .paragraph1 {
   margin: 10px auto;
 }
@@ -25,9 +31,6 @@ body {
   margin-top: 0;
 }
 
-.paragraph2 {
-  margin-top: 0;
-}
 .box {
   display: flex;
   gap: 8px;
