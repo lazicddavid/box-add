@@ -39,6 +39,10 @@ function createBox() {
         this.marbles--;
       }
     },
+
+    getMarbles() {
+      return this.marbles;
+    },
   };
 }
 function getTotalMarbles() {
@@ -82,10 +86,11 @@ DOMElements.boxesContainer.addEventListener("click", (e) => {
   const id = e.target.dataset.id;
   const action = e.target.dataset.action;
   if (!id || !action) return;
-  if (action === "increase") boxList.increase(id);
-  else if (action === "decrease") boxList.decrease(id);
+  const box = boxList.getBoxes().find((box) => box.id === id);
+  if (!box) return;
+
+  if (action === "increase") boxList.increase();
+  else if (action === "decrease") boxList.decrease();
   else if (action === "delete") boxList.remove(id);
   updateBoxes();
 });
-
-updateBoxes();
