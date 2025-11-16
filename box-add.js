@@ -54,7 +54,7 @@ function updateBoxes() {
     `;
     DOMElements.boxesContainer.appendChild(boxElement);
   }); //za svaku varijablu, bilo da je u box list, ili createBox, uvek napravi
-  // //funkcije koje se koriste za pristup varijablama
+  //funkcije koje se koriste za pristup varijablama
   DOMElements.boxesCountSpan.textContent = boxList.boxes.length;
 
   DOMElements.marblesCountSpan.textContent = totalMarbles;
