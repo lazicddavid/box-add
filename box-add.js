@@ -74,3 +74,5 @@ DOMElements.boxesContainer.addEventListener("click", (e) => {
   else if (action === "delete") boxList.remove(id);
   updateBoxes();
 });
+
+updateBoxes();
