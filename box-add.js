@@ -20,15 +20,6 @@ function createBoxList() {
       return this.boxes;
     },
 
-    increase(id) {
-      const box = this.boxes.find((box) => box.id === id);
-      if (box) box.marbles++;
-    },
-
-    decrease(id) {
-      const box = this.boxes.find((box) => box.id === id);
-      if (box && box.marbles > 0) box.marbles--;
-    },
     remove(id) {
       this.boxes = this.boxes.filter((box) => box.id !== id);
     },
@@ -36,9 +27,20 @@ function createBoxList() {
 }
 const boxList = createBoxList();
 function createBox() {
-  return { id: crypto.randomUUID(), marbles: 0 };
-}
+  return {
+    id: crypto.randomUUID(),
+    marbles: 0,
 
+    increase() {
+      this.marbles++;
+    },
+    decrease() {
+      if (this.marbles > 0) {
+        this.marbles--;
+      }
+    },
+  };
+}
 function getTotalMarbles() {
   let total = 0;
 
