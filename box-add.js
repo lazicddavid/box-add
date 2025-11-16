@@ -51,7 +51,7 @@ function getTotalMarbles() {
 //prebaciti increase i decrease unutar createBox
 function updateBoxes() {
   DOMElements.boxesContainer.innerHTML = "";
-  let totalMarbles = 0;
+
   boxList.getBoxes().forEach((box) => {
     totalMarbles += box.marbles; //get funkcija za marbles
     const boxElement = document.createElement("div");
@@ -67,6 +67,7 @@ function updateBoxes() {
   //funkcije koje se koriste za pristup varijablama
   DOMElements.boxesCountSpan.textContent = boxList.boxes.length;
 
+  const totalMarbles = getTotalMarbles();
   DOMElements.marblesCountSpan.textContent = totalMarbles;
 }
 
