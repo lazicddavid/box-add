@@ -72,15 +72,17 @@ function updateBoxes() {
     const boxElement = document.createElement("div");
     boxElement.className = "box";
     boxElement.innerHTML = ` 
-      <button data-action="decrease" data-id="${box.id}">-</button>
-      <span>${box.marbles}</span>
+      <button data-action="decrease" data-id="${box.getId}">-</button>
+      <span>${box.getMarbles()}</span>
       <button data-action="increase" data-id="${box.id}">+</button>
-      <button class="delete-btn" data-action="delete" data-id="${box.id}">🗑️</button>
+      <button class="delete-btn" data-action="delete" data-id="${
+        box.id
+      }">🗑️</button>
     `;
     DOMElements.boxesContainer.appendChild(boxElement);
   }); //za svaku varijablu, bilo da je u box list, ili createBox, uvek napravi
   //funkcije koje se koriste za pristup varijablama
-  DOMElements.boxesCountSpan.textContent = boxList.boxes.length;
+  DOMElements.boxesCountSpan.textContent = boxList.getCount();
 
   const totalMarbles = getTotalMarbles();
   DOMElements.marblesCountSpan.textContent = totalMarbles;
