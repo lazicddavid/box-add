@@ -12,16 +12,21 @@ function createBoxList() {
     //na pocetak je 0
     //napravi funkciju gettotaMarbles ili CalculateTotalMarbles
     //tu funkciju pozoves kad god ti treba total marbles
+
     add() {
-      const newBox = createBox();
-      this.boxes.push(newBox);
+      this.boxes.push(createBox());
     },
+
+    remove(id) {
+      this.boxes = this.boxes.filter((box) => box.getId() !== id);
+    },
+
     getBoxes() {
       return this.boxes;
     },
 
-    remove(id) {
-      this.boxes = this.boxes.filter((box) => box.id !== id);
+    getCount() {
+      return this.boxes.length;
     },
   };
 }
