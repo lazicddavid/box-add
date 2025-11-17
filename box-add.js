@@ -43,13 +43,17 @@ function createBox() {
     getMarbles() {
       return this.marbles;
     },
+
+    getId() {
+      return this.id;
+    },
   };
 }
 function getTotalMarbles() {
   let total = 0;
 
   boxList.getBoxes().forEach((box) => {
-    total += box.marbles;
+    total += box.getMarbles;
   });
 
   return total;
