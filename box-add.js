@@ -58,7 +58,7 @@ function getTotalMarbles() {
   let total = 0;
 
   boxList.getBoxes().forEach((box) => {
-    total += box.getMarbles;
+    total += box.getMarbles();
   });
 
   return total;
@@ -68,16 +68,14 @@ function updateBoxes() {
   DOMElements.boxesContainer.innerHTML = "";
 
   boxList.getBoxes().forEach((box) => {
-    totalMarbles += box.marbles; //get funkcija za marbles
     const boxElement = document.createElement("div");
     boxElement.className = "box";
     boxElement.innerHTML = ` 
-      <button data-action="decrease" data-id="${box.getId}">-</button>
+      <button data-action="decrease" data-id="${box.getId()}">-</button>
       <span>${box.getMarbles()}</span>
-      <button data-action="increase" data-id="${box.id}">+</button>
-      <button class="delete-btn" data-action="delete" data-id="${
-        box.id
-      }">🗑️</button>
+      <button data-action="increase" data-id="${box.getId()}">+</button>
+<button class="delete-btn" data-action="delete" data-id="${box.getId()}">🗑️</button>
+
     `;
     DOMElements.boxesContainer.appendChild(boxElement);
   }); //za svaku varijablu, bilo da je u box list, ili createBox, uvek napravi
@@ -97,11 +95,12 @@ DOMElements.boxesContainer.addEventListener("click", (e) => {
   const id = e.target.dataset.id;
   const action = e.target.dataset.action;
   if (!id || !action) return;
-  const box = boxList.getBoxes().find((box) => box.id === id);
+  const box = boxList.getBoxes().find((box) => box.getId() === id);
+
   if (!box) return;
 
-  if (action === "increase") boxList.increase();
-  else if (action === "decrease") boxList.decrease();
+  if (action === "increase") box.increase();
+  else if (action === "decrease") box.decrease();
   else if (action === "delete") boxList.remove(id);
   updateBoxes();
 });
