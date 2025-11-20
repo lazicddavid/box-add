@@ -54,6 +54,7 @@ function createBox() {
     },
   };
 }
+
 function getTotalMarbles() {
   let total = 0;
 
